@@ -1,0 +1,51 @@
+import pytest 
+
+def test_un_array_se_imprime_correctamente_sin_necesidad_de_hacer_nada_mas_que_print() :
+    arr = [4,5,6]
+    print(arr)
+
+@pytest.mark.parametrize("limit,expected_value", [
+    (0,[]), 
+    (1,[4]),
+    (2,[4,5]),
+    (3,[4,5,6]),
+    (4,[4,5,6,7]),
+    (5,[4,5,6,7]),
+])
+def test_se_puede_coger_desde_el_inicio_de_un_array_hasta_un_indice_dado_NO_INCLUIDO_usando_los_dos_puntos(limit,expected_value) :
+    arr = [4,5,6,7]
+
+    assert arr[:limit] == expected_value
+
+@pytest.mark.parametrize("limit,expected_value", [
+    (0,[4,5,6,7]),
+    (1,[5,6,7]),
+    (2,[6,7]),
+    (3,[7]),
+    (4,[]),
+])
+def test_se_puede_coger_desde_un_indice_dado_INCLUIDO_hsata_el_final_del_array_usando_los_dos_puntos(limit,expected_value) :
+    arr = [4,5,6,7]
+
+    assert arr[limit:] == expected_value
+
+@pytest.mark.parametrize("limit_left,limit_right,expected_value", [
+    (0,0,[]),
+    (0,1,[4]),
+    (0,2,[4,5]),
+    (0,3,[4,5,6]),
+    (0,4,[4,5,6,7]),
+    (1,1,[]),
+    (1,2,[5]),
+    (1,3,[5,6]),
+    (1,4,[5,6,7]),
+    (2,2,[]),
+    (2,3,[6]),
+    (2,4,[6,7]),
+    (3,3,[]),
+    (3,4,[7]),
+])
+def test_se_puede_coger_desde_un_indice_dado_hsata_el_final_del_array_usando_los_dos_puntos(limit_left,limit_right,expected_value) :
+    arr = [4,5,6,7]
+
+    assert arr[limit_left:limit_right] == expected_value
