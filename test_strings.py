@@ -9,8 +9,6 @@ def test_el_tamaño_de_un_texto_se_calcula_con_len(texto,longitudEsperada) :
     longitudObtenida = len(texto)
     assert longitudEsperada == longitudObtenida
 
-
-
 def test_no_se_puede_calcular_el_tamaño_de_none() :
     with pytest.raises(Exception) as exception :
         len(None)
