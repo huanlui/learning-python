@@ -16,4 +16,18 @@ def test_no_se_puede_calcular_el_tamaño_de_none() :
 def test_los_textos_tambien_se_pueden_tratar_como_arrays() :
     texto = "abcde"
     textoCortado = texto[1:4]
+
     assert textoCortado == "bcd"
+
+def test_para_escoger_los_n_primeros_caracteres_hay_una_forma_comoda_que_funciona_incluso_con_textos_mas_cortos():
+    textoLargo = "abcde"
+    textoCorto = "ab"
+
+    tresPrimerasLetrasTextoLargo = textoLargo[:3]
+    tresPrimerasLetrasTextoCorto = textoCorto[:3]
+
+    assert tresPrimerasLetrasTextoLargo == "abc"
+    assert tresPrimerasLetrasTextoCorto == "ab"
+
+
+
