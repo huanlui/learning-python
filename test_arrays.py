@@ -49,3 +49,15 @@ def test_se_puede_coger_desde_un_indice_dado_hsata_el_final_del_array_usando_los
     arr = [4,5,6,7]
 
     assert arr[limit_left:limit_right] == expected_value
+
+@pytest.mark.parametrize("first_array,second_array,expected_value", [
+    ([],[],[]),
+    ([],[1],[1]),
+    ([1],[2],[1,2]),
+    ([2],[1],[2,1]),
+    ([1,2,3],[5,4,2],[1,2,3,5,4,2]),
+    (["a"],["b"],["a","b"]),
+    ([1],["a"],[1,"a"]),
+])
+def test_para_concaternar_dos_aray_se_usa_el_mas(first_array,second_array,expected_value) :
+    assert first_array + second_array == expected_value
