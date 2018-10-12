@@ -1,5 +1,7 @@
 import sys
 print(sys.version)
 
-variable = "Hello world!"
-print(variable)
+def getHelloMessage():
+    return "Hello world!"
+
+print(getHelloMessage())
