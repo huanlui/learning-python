@@ -33,6 +33,8 @@ print(sys.version)
 
 9. Hay que elegir un famework para pruebas también desde la paleta de comandos (ctrl+shift+p). He escogido Pytest (http://pythontesting.net/transcripts/2-pytest-vs-unittest-vs-nose/)
 
+10. VS Code te avisa de que el linter o el pytest no se han podido instalar.Será por tema de permisos. Para ello, ver el comando que está intentando ejecutar y ejecutarlo igual desde la misma terminal de VS Code anteponiendo sudo. 
+
 Más información:
 https://code.visualstudio.com/docs/languages/python
 
