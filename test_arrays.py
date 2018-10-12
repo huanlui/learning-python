@@ -61,3 +61,9 @@ def test_se_puede_coger_desde_un_indice_dado_hsata_el_final_del_array_usando_los
 ])
 def test_para_concaternar_dos_aray_se_usa_el_mas(first_array,second_array,expected_value) :
     assert first_array + second_array == expected_value
+
+def test_da_igual_si_me_salgo_de_las_posiciones_del_array_python_te_lo_apaña() :
+    array = [1,2,3]
+    array2 = array[-5:80]
+    
+    assert array == array2

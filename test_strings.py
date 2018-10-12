@@ -11,6 +11,7 @@ def test_el_tamaño_de_un_texto_se_calcula_con_len(texto,longitudEsperada) :
 
 def test_no_se_puede_calcular_el_tamaño_de_none() :
     with pytest.raises(Exception) as exception :
+        print(exception)
         len(None)
 
 def test_los_textos_tambien_se_pueden_tratar_como_arrays() :
