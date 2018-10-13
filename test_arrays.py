@@ -67,3 +67,21 @@ def test_da_igual_si_me_salgo_de_las_posiciones_del_array_python_te_lo_apaña() 
     array2 = array[-5:80]
     
     assert array == array2
+
+def test_para_añadir_elementos_al_final_de_un_array_se_usa_append() :
+    array  = []
+
+    array.append("a")
+    array.append("b")
+
+    assert array == ["a","b"]
+
+def test_para_saber_si_un_elemento_esta_en_un_array_se_usa_in() :
+    array = [1,2,3]
+
+    assert 3 in array
+
+def test_para_saber_si_un_elemento_NO_esta_en_un_array_se_usa_not_in() :
+    array = [1,2,3]
+
+    assert 4 not in array
