@@ -65,3 +65,12 @@ def test_tambien_se_pueden_nombrar_los_parametros_para_repetir_o_desprecouparse_
 
     assert saludo == "Hola, soy Paco, sí Paco, y tengo sólo 76 años"
 
+def test_para_convertir_a_minusculas_se_usa_lower() :
+    upper = "CASA"
+
+    assert upper.lower() == "casa"
+
+def test_para_convertir_a_mayusculas_se_usa_upper() :
+    upper = "casa"
+
+    assert upper.upper() == "CASA"

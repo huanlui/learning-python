@@ -85,3 +85,4 @@ def test_para_saber_si_un_elemento_NO_esta_en_un_array_se_usa_not_in() :
     array = [1,2,3]
 
     assert 4 not in array
+
