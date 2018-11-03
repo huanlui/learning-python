@@ -145,7 +145,7 @@ def test_para_coger_el_ulitmo_elemento_de_un_array_se_usa_menos_1():
 
     assert array[-1] == 5
 
-def test_los_arrays_se_copian_por_valor() :
+def test_los_arrays_se_copian_por_referencia() :
     array = [1,2,3,4,5]
     array2 = array
 
@@ -160,4 +160,14 @@ def test_para_hacerse_una_copia_de_un_array_lo_mas_facil_es_usar_los_dos_puntos(
     array.remove(1)
 
     assert array2 == [1,2 ,3,4,5]
+
+def test_para_obtener_un_array_de_tuplas_a_partir_de_varios_arrays_se_usa_zip() :
+    posiciones = [0,1,2,3,4]
+    nombres = ["lunes", "martes", "miércoles", "jueves", "viernes", "este no estará porque es más grande"]
+
+    zipped = zip(posiciones,nombres)
+
+    zipped = sorted(zipped, key = lambda tupla : tupla[0]) #ordeno las tuplas por posición, porque zip te lo ordena como le da la gana
+
+    assert zipped == [(0,"lunes"),(1,"martes"),(2,"miércoles"),(3, "jueves"),(4, "viernes")]
 
