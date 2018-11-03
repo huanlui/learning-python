@@ -59,3 +59,7 @@ touch nombreDeFichero.txt
 
 
 
+Otra cosas que ver
+==================
+VS Code con python: https://bespohk.com/blog/configuring-python-visual-studio-code
+Jinja: Template engine for ¡ython http://jinja.pocoo.org/
