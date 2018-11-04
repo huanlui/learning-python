@@ -8,6 +8,10 @@ class PerroConConstructor:
     def __init__(self, nombre, raza):
         self.nombre = nombre
         self.raza = raza
+    
+    def ladrar(self):
+        print(f"Soy {self.nombre} y voy a ladrar: GUAU!")
+        return "guau"
 
 #Clase callable. Se trata como una función. Al ser casi como una función, también se podría nombrar mi_recta. 
 class MiRecta:
@@ -19,6 +23,22 @@ class MiRecta:
         y = self.ordenadaOrigen + self.pendiente * x
 
         return y
+
+class Heroe:
+    def __init__(self,vidas):
+        self.__vidas_restantes = vidas #no existen campos privados en sí, porque son accesbiles, pero por conveniio se usa el doble _
+    
+    def matar(self):
+        self.__vidas_restantes -= 1
+    
+    def estaMuerto(self):
+        return self.__vidas_restantes <= 0
+    
+    
+class SuperPerro(Heroe,PerroConConstructor):
+    def __init__(self,nombre,raza,vidas_restantes):
+        Heroe.__init__(self,vidas_restantes)
+        PerroConConstructor.__init__(self,nombre,raza)
 
 
 def test_para_crear_una_instancia_de_una_clase_se_pone_sin_new():
@@ -41,3 +61,12 @@ def test_las_clases_callables_son_como_funciones():
 
     assert y_para_x_0 == 5
     assert y_para_x_10 == 105
+
+def test_python_permite_herencia_multiple():
+    perro_muchacho = SuperPerro("Perro","Mastín",1)
+
+    assert perro_muchacho.ladrar() == "guau"
+    assert not perro_muchacho.estaMuerto()
+    perro_muchacho.matar() 
+    assert perro_muchacho.estaMuerto()
+    
