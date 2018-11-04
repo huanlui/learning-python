@@ -1,6 +1,6 @@
 import pytest
 
-def test_un_array_se_imprime_correctamente_sin_necesidad_de_hacer_nada_mas_que_print() :
+def test_un_array_tambien_llamado_lista_se_imprime_correctamente_sin_necesidad_de_hacer_nada_mas_que_print() :
     arr = [4,5,6]
     print(arr)
 
