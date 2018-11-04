@@ -92,3 +92,28 @@ def test_para_hacer_un_groupby_antes_es_necesario_haber_ordenado_por_la_clave_de
     assert list(personas_agrupadas_por_numero_de_letras_en_array[3][1]) == ["Maradona"]
 
 
+class MiIterable:
+        def __iter__(self):
+                self.valorActual = 0
+                return self
+        
+        def __next__(self) :
+                if(self.valorActual == 5) : raise StopIteration #Esto indica que acaba la iteracion
+
+                self.valorActual += 1
+                return self.valorActual
+
+
+def test_he_definido_un_iterable_y_lo_uso() :
+        miIterable = MiIterable()
+
+        miArray = []
+
+        for numero in miIterable:
+                miArray.append(numero)
+
+        assert miArray == [1,2,3,4,5]
+
+
+
+
